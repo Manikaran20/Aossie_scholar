@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<link rel="stylesheet" 
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	</head>
+	<body>
+		<table>
+			<caption>Author's Name</caption>
+			<thead>
+				<th>Publication title</th>
+				<th>co-Authors</th>
+				<th>Citations</th>
+				<th>Normalized Citations</th>
+			</thead>
+			<tbody>
+				{% for element in Title %}
+				 <tr>
+				 	<td>{% Title[forloop.counter] %} </td>
+				 	<td>{{ auths[forloop.counter] }} </td>
+				 	<td>{{ citations[forloop.counter] }} </td>
+				 	<td>{{ normalized_citations[forloop.counter] }} </td>
+
+				 </tr>
+				{% endfor %}
+			</tbody>
+
+
+			</thead>
+		</table></body>

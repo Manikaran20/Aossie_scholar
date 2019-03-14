@@ -1,0 +1,41 @@
+<html>
+{% load django_tables2 %}
+	<head>
+		<link rel="stylesheet" 
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	</head>
+	<body>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Citations</th>
+					<th>Co-authors</th>
+					<th>Normalized Citations</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			
+			{% render_table Table %}
+				
+			
+			</tbody>
+			
+			
+		</table>
+		<h1>Normalized h-index = {{ normalized_h_index }} </h1>
+		<h2>Total normalized citations= {{ total_normalized_citations }}</h2>
+		<h3>total number of normalized papers= {{ normalized_papers }}</h3>
+
+		 
+	</body>
+	
+		
+   
+		
+
+	
+
+</html>
