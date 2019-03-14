@@ -119,8 +119,6 @@ class Scraper():
 			driver.implicitly_wait(0.5)
 			for url in url_to_counter:
 				print (url)
-				#if (ncounter > 0):
-				#time.sleep(0.5)
 				print (N_author_url[url])
 				driver.get(N_author_url[url])
 				time.sleep(0.5)
@@ -128,7 +126,6 @@ class Scraper():
 				page_element = title[0].text
 				print (page_element)
 				coAuths.append(len(page_element.split(',')))
-				ncounter+= 1
 			driver.quit()
 
 		for name in n_author_names_list:
@@ -177,7 +174,20 @@ class Scraper():
 
 		normalized_papers= int(n_papers)
 		total_normalized_citations= int(sum(n_citations))
-		normalized_h_index= int(sum(n_citations)/len(title_list))
+		#normalized_h_index= int(sum(n_citations)/len(title_list))
+
+		nn_citations= n_citations[0:normalized_papers]
+		nn_citations.sort(reverse= True)
+
+		for i in nn_citations:
+			ncounter+= 1
+			print (ncounter, i)
+			if(ncounter> i):
+				normalized_h_index= ncounter-1
+				break
+
+
+
 
 		return (normalized_papers, total_normalized_citations, normalized_h_index)
 		#table= [title_list, number_of_coauths, newCitations, n_citations]
