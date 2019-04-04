@@ -13,6 +13,8 @@ from aossie_scholar.metrictables import NameTable
 
 from .models import Author
 
+from django_tables2 import RequestConfig
+
 
 class IndexView(TemplateView):
 	template_name = 'aossie_scholar/index.html'
@@ -30,7 +32,7 @@ class IndexView(TemplateView):
 			Author.objects.all().delete()
 			b=scholar_data.f()
 			table= NameTable(Author.objects.all())
-			
+			#RequestConfig(request).configure(table)
 			normalized_papers= b[0]
 			total_normalized_citations=b[1]
 			normalized_h_index= b[2]

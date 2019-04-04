@@ -116,7 +116,7 @@ class Scraper():
 
 		if len(url_to_counter) != 0:
 			driver= webdriver.Firefox()
-			driver.implicitly_wait(0.5)
+			driver.implicitly_wait(0.2)
 			for url in url_to_counter:
 				print (url)
 				print (N_author_url[url])

@@ -1,5 +1,8 @@
+
+{% load render_table from django_tables2 %}
 <html>
-{% load django_tables2 %}
+
+
 	<head>
 		<link rel="stylesheet" 
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
@@ -25,10 +28,11 @@
 			
 			
 		</table>
-		<h1>Normalized h-index = {{ normalized_h_index }} </h1>
-		<h2>Total normalized citations= {{ total_normalized_citations }}</h2>
-		<h3>total number of normalized papers= {{ normalized_papers }}</h3>
-
+		<p>
+			<l1> Normalized h-index = {{ normalized_h_index }} </l1>
+		<l2>Total normalized citations= {{ total_normalized_citations }}</l2>
+		<l3>total number of normalized papers= {{ normalized_papers }}</l3>
+	</p>
 		 
 	</body>
 	
